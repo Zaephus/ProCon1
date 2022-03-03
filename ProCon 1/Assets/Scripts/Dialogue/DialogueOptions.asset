@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5c11855403434d4fa79a3404a9e3281, type: 3}
+  m_Name: DialogueOptions
+  m_EditorClassIdentifier: 
+  dialogueList:
+  - ik ben een zin
+  - nu komt een vraag die jij moet beantwoorden
+  responseOptions:
+  - ja duuuh
+  - dat zie ik zelf toch ook wel
+  - denk je dat ik blind ben ofzo?`
+  - dit is puur zelfvermaak
+  inputBreak: 1
+  nextDialogueOptions:
+  - {fileID: 11400000, guid: a1a106251af495744b2a67b6f5eb39ff, type: 2}
+  - {fileID: 11400000, guid: d474166eab4f92748a77177c507883d3, type: 2}
+  - {fileID: 11400000, guid: fc1f268363cc3634482c0f44081032a1, type: 2}
+  - {fileID: 11400000, guid: e94ad2c7bb2c20544a024323c8ac9e79, type: 2}

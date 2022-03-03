@@ -2064,12 +2064,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tmpProText: {fileID: 258612448}
-  dialogueList:
-  - ik ben een zin
-  - hierna komt een vraag die jij moet beantwoorden
-  - tekst die ik moet zeggen
+  buttonTexts:
+  - {fileID: 748226615}
+  - {fileID: 744334070}
+  - {fileID: 764470200}
+  - {fileID: 1258934187}
+  buttons:
+  - {fileID: 1360552403}
+  - {fileID: 953895482}
+  - {fileID: 639041711}
+  - {fileID: 112137104}
   inputBreak: 01000000
   dialogueBox: {fileID: 2058676830}
+  optionsBox: {fileID: 1750996133}
+  currentDialogueOptions: {fileID: 11400000, guid: 90946b587ffebf24ebace8046840fc21, type: 2}
   delayBeforeStart: 0
   timeBtwChars: 0.05
   leadingChar: 
