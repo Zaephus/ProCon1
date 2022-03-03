@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5c11855403434d4fa79a3404a9e3281, type: 3}
-  m_Name: DialogueOptions
+  m_Name: 1
   m_EditorClassIdentifier: 
   dialogueList:
-  - ik ben een zin
-  - nu komt een vraag die jij moet beantwoorden
+  - hoi, ik ben een NPC
+  - Hoe gaat het met je?
   responseOptions:
-  - ja duuuh
-  - dat zie ik zelf toch ook wel
-  - denk je dat ik blind ben ofzo?`
-  - dit is puur zelfvermaak
+  - kon beter
+  - '*maakt vage arm bewegingen*'
+  - ik voel mij fantastisch!
+  - god bestaat niet meer
+  chosenAmount: 02000000010000000100000001000000
   inputBreak: 1
   nextDialogueOptions:
   - {fileID: 11400000, guid: a1a106251af495744b2a67b6f5eb39ff, type: 2}

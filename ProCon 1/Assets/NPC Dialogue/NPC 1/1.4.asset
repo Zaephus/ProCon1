@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5c11855403434d4fa79a3404a9e3281, type: 3}
-  m_Name: 4
+  m_Name: 1.4
   m_EditorClassIdentifier: 
   dialogueList:
-  - 4
+  - '*belt politie*'
   responseOptions:
   - 1
   - 2
   - 3
   - 4
+  chosenAmount: 00000000000000000000000000000000
   inputBreak: 1
   nextDialogueOptions:
   - {fileID: 11400000, guid: 90946b587ffebf24ebace8046840fc21, type: 2}
