@@ -32,6 +32,7 @@ public class DialogueSystem : MonoBehaviour
 		}
 
 		AddNewDialogueOptions(currentDialogueOptions);
+		ActivePercentages(false);
 	}
 
 	private void Update()
@@ -62,7 +63,6 @@ public class DialogueSystem : MonoBehaviour
 	{
 		if (index == currentDialogueOptions.inputBreak)
 		{
-			SetPercentages();
 			optionsBox.SetActive(true);
 			for (int i = 0; i < buttonTexts.Count; i++)
 			{
@@ -115,6 +115,8 @@ public class DialogueSystem : MonoBehaviour
 
 	public void AddNewDialogueOptions(DialogueOptions _newDialogueOptions)
 	{
+		SetPercentages();
+		ActivePercentages(true);
 		currentDialogueOptions = _newDialogueOptions;
 		index = 0;
 		//Debug.Log(currentDialogueOptions.nextDialogueOptions.Count + " " + buttons.Count);
@@ -131,10 +133,15 @@ public class DialogueSystem : MonoBehaviour
 			//buttons[i].onClick.AddListener(delegate { this.AddNewDialogueOptions(currentDialogueOptions.nextDialogueOptions[i]); });
 			//buttons[i].onClick.AddListener(() => GeenIdee());
 		}
+		StartCoroutine(SetPercentageDelay());
+	}
+
+	public IEnumerator SetPercentageDelay()
+    {
+		yield return new WaitForSeconds(1.5f);
 		optionsBox.SetActive(false);
 		StartDialogue();
 	}
-
 	private void SetPercentages()
 	{
 		float total = 0;
@@ -147,8 +154,17 @@ public class DialogueSystem : MonoBehaviour
 			float amount = currentDialogueOptions.chosenAmount[i];
 			amount = (amount / total) * 100;
 			buttonPercentagesTexts[i].text = amount + "%";
+			buttonPercentagesTexts[i].text = string.Format("{0:0.00}", amount) + "%";
 		}
 	}
+
+	private void ActivePercentages(bool _state)
+    {
+        for (int i = 0; i < buttonPercentagesTexts.Count; i++)
+        {
+			buttonPercentagesTexts[i].gameObject.SetActive(_state);
+        }
+    }
 
 	public void AddChosenCount(int _index)
 	{
