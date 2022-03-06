@@ -7,6 +7,8 @@ public class PlayerInteract : MonoBehaviour {
 
     public Image thingy;
 
+    private Vector2 promptPosition;
+
     public void Start() {
 
         thingy.enabled = false;
@@ -15,7 +17,7 @@ public class PlayerInteract : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D other) {
 
-        Vector2 promptPosition = other.transform.position;
+        promptPosition = other.transform.position;
         promptPosition.y += 1;
 
         thingy.enabled = true;
@@ -25,12 +27,17 @@ public class PlayerInteract : MonoBehaviour {
 
     public void OnTriggerStay2D(Collider2D other) {
 
+        promptPosition = other.transform.position;
+        promptPosition.y += 1;
+
         if(other.GetComponent<IInteractable>() != null) {
             IInteractable interact = other.GetComponent<IInteractable>();
             if(Input.GetButtonDown("Interact")) {
                 interact.Interact();
             }
         }
+
+        thingy.transform.position = promptPosition;
 
     }
 
