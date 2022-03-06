@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPC_Controller : MonoBehaviour {
+public class NPC_Controller : MonoBehaviour,IInteractable {
 
     private FSM fsm;
 
@@ -15,6 +15,12 @@ public class NPC_Controller : MonoBehaviour {
     public void Update() {
 
         fsm.OnUpdate();
+
+    }
+
+    public void Interact() {
+
+        fsm.SwitchState(typeof(InteractingState));
 
     }
     
