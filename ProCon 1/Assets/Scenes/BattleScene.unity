@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 718800217}
   - component: {fileID: 718800216}
+  - component: {fileID: 718800218}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -199,12 +200,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718800215}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.37, y: -0.28, z: 0}
+  m_LocalPosition: {x: 4.08, y: 2.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &718800218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718800215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dcfe7b59f269f34ba1ee857770dae0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  player: {fileID: 1117236254}
+  abilities:
+  - {fileID: 11400000, guid: 735bd45fbe8184a49b590ec538a8e8fd, type: 2}
 --- !u!1 &1117236251
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,6 +232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1117236253}
   - component: {fileID: 1117236252}
+  - component: {fileID: 1117236254}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -281,12 +299,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117236251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.15, y: -0.34, z: 0}
+  m_LocalPosition: {x: -3.53, y: -0.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1117236254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117236251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4a6211fe625cd429479d6bc7a74515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  enemy: {fileID: 718800218}
+  abilities:
+  - {fileID: 11400000, guid: 5cba8ebf9a596274883c66035515876a, type: 2}
 --- !u!1 &1625858069
 GameObject:
   m_ObjectHideFlags: 0
