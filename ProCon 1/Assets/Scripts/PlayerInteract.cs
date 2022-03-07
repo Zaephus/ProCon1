@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class PlayerInteract : MonoBehaviour {
 
-    public Image thingy;
+    public Image prompt;
 
     private Vector2 promptPosition;
 
     public void Start() {
 
-        thingy.enabled = false;
+        prompt.enabled = false;
 
     }
 
@@ -20,8 +20,8 @@ public class PlayerInteract : MonoBehaviour {
         promptPosition = other.transform.position;
         promptPosition.y += 1;
 
-        thingy.enabled = true;
-        thingy.transform.position = promptPosition;
+        prompt.enabled = true;
+        prompt.transform.position = promptPosition;
 
     }
 
@@ -34,16 +34,17 @@ public class PlayerInteract : MonoBehaviour {
             IInteractable interact = other.GetComponent<IInteractable>();
             if(Input.GetButtonDown("Interact")) {
                 interact.Interact();
+                prompt.enabled = false;
             }
         }
 
-        thingy.transform.position = promptPosition;
+        prompt.transform.position = promptPosition;
 
     }
 
     public void OnTriggerExit2D(Collider2D other) {
 
-        thingy.enabled = false;
+        prompt.enabled = false;
 
     }
 
