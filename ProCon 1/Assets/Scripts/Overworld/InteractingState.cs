@@ -9,7 +9,8 @@ public class InteractingState : BaseState {
 
     public override void OnEnter() {
 
-        Debug.Log("Hello World!!");
+        timer = waitDuration;
+
         LevelLoader.instance.LoadLevel("BattleScene");
 
     }

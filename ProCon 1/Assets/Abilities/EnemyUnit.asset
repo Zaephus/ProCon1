@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: EnemyUnit
   m_EditorClassIdentifier: 
   unitName: Enemy
-  damage: 6
+  damage: 5
   maxHealth: 30
   currentHealth: 30
   maxMana: 30
   currentMana: 30
-  lastPosX: 0
-  lastPosY: 0
+  lastPosX: 6.0248837
+  lastPosY: -8.665956

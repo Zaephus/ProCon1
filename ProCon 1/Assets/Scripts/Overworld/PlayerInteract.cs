@@ -9,9 +9,23 @@ public class PlayerInteract : MonoBehaviour {
 
     private Vector2 promptPosition;
 
+    IInteractable interact;
+
+    private bool canInteract = false;
+
     public void Start() {
 
         prompt.enabled = false;
+
+    }
+
+    public void Update() {
+
+        if(Input.GetButtonDown("Interact")) {
+                interact.Interact();
+                prompt.enabled = false;
+                canInteract = false;
+            }
 
     }
 
@@ -31,11 +45,8 @@ public class PlayerInteract : MonoBehaviour {
         promptPosition.y += 1;
 
         if(other.GetComponent<IInteractable>() != null) {
-            IInteractable interact = other.GetComponent<IInteractable>();
-            if(Input.GetButtonDown("Interact")) {
-                interact.Interact();
-                prompt.enabled = false;
-            }
+            interact = other.GetComponent<IInteractable>();
+            canInteract = true;
         }
 
         prompt.transform.position = promptPosition;
@@ -45,6 +56,7 @@ public class PlayerInteract : MonoBehaviour {
     public void OnTriggerExit2D(Collider2D other) {
 
         prompt.enabled = false;
+        canInteract = false;
 
     }
 

@@ -1770,6 +1770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 829164331}
   - component: {fileID: 829164332}
+  - component: {fileID: 829164333}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -1806,7 +1807,20 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.2
+--- !u!114 &829164333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829164330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08400bb805efaa043a128e0d69557e7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prompt: {fileID: 351685954}
 --- !u!1 &841051224
 GameObject:
   m_ObjectHideFlags: 0
@@ -7679,11 +7693,9 @@ GameObject:
   m_Component:
   - component: {fileID: 890124968}
   - component: {fileID: 890124967}
-  - component: {fileID: 890124966}
   - component: {fileID: 890124971}
   - component: {fileID: 890124965}
   - component: {fileID: 890124969}
-  - component: {fileID: 890124970}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -7712,22 +7724,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &890124966
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890124964}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.3
 --- !u!212 &890124967
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7810,19 +7806,6 @@ MonoBehaviour:
   playerCamera: {fileID: 385963848}
   unit: {fileID: 11400000, guid: 0aa199bb13ec12b41bc613ff34367f60, type: 2}
   runSpeed: 7
---- !u!114 &890124970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890124964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08400bb805efaa043a128e0d69557e7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prompt: {fileID: 351685954}
 --- !u!58 &890124971
 CircleCollider2D:
   m_ObjectHideFlags: 0
