@@ -2,23 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unit : MonoBehaviour {
+[CreateAssetMenu(fileName = "Unit",menuName = "Unit")]
+public class Unit : ScriptableObject {
 
     public string unitName;
 
     public int damage;
 
-    public int maxHP;
-    public int currentHP;
+    public int maxHealth;
+    public int currentHealth;
 
     public int maxMana;
     public int currentMana;
 
+    public float lastPosX;
+    public float lastPosY;
+
     public bool TakeDamage(int dmg) {
 
-        currentHP -= dmg;
+        currentHealth -= dmg;
 
-        if(currentHP <= 0) {
+        if(currentHealth <= 0) {
+            currentHealth = 0;
             return true;
         }
         else {
@@ -29,9 +34,9 @@ public class Unit : MonoBehaviour {
 
     public void Heal(int amount) {
 
-        currentHP += amount;
-        if(currentHP > maxHP) {
-            currentHP = maxHP;
+        currentHealth += amount;
+        if(currentHealth > maxHealth) {
+            currentHealth = maxHealth;
         }
         
     }

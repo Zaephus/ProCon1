@@ -6,12 +6,17 @@ public class PlayerController : MonoBehaviour {
 
     Rigidbody2D body;
     public Camera playerCamera;
+    public Unit unit;
 
     float horizontal;
     float vertical;
     float moveLimiter = 0.7f;
 
     public float runSpeed = 20.0f;
+
+    public void Awake() {
+        this.transform.position = new Vector3(unit.lastPosX,unit.lastPosY,0);
+    }
 
     void Start() {
         body = GetComponent<Rigidbody2D>();
@@ -22,6 +27,9 @@ public class PlayerController : MonoBehaviour {
         // Gives a value between -1 and 1
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
+
+        unit.lastPosX = this.transform.position.x;
+        unit.lastPosY = this.transform.position.y;
 
     }
 
