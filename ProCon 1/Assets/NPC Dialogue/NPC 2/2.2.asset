@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5c11855403434d4fa79a3404a9e3281, type: 3}
-  m_Name: 1
+  m_Name: 2.2
   m_EditorClassIdentifier: 
   dialogueList:
-  - he daar, hoe bevalt het je tot nu toe hier op het hku? Hoe zijn je nieuwe medestudenten?
+  - aha wat leuk, zou je me naar ze kunnen introduceren? Ben altijd al een fan geweest
+    van clowns.
   responseOptions:
-  - hier op school is alles wel fijn, maar ik heb wel wat last gehad van een paar
-    van mijn medestudenten
-  - de medestudenten zijn super gezellig tot nu toe, maar ik heb nog wel wat onduidelijkheden
-    over het hku.
+  - 'Ah ja dat dacht ik al, ik vond het al knap hoe je dagelijks in je cosplay ervan
+    kwam opdagen. '
+  - ze kunnen soms wel raar zijn inderdaad, maar ik zal ze aan je introduceren als
+    ik de kans krijg.
   chosenAmount: 00000000000000000000000000000000
   inputBreak: 0
   nextDialogueOptions:
-  - {fileID: 11400000, guid: f48d67d83f8bbd24daf961d971fb198a, type: 2}
-  - {fileID: 11400000, guid: 8ae3cbbb56a8eb04694733942e98fccc, type: 2}
+  - {fileID: 11400000, guid: 619ff4668db6f594893cfe26005d6143, type: 2}
+  - {fileID: 11400000, guid: eae819aedc6888f489ae0b2032b66f14, type: 2}

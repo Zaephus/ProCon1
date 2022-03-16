@@ -10,17 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5c11855403434d4fa79a3404a9e3281, type: 3}
-  m_Name: 1
+  m_Name: 2.1
   m_EditorClassIdentifier: 
   dialogueList:
-  - he daar, hoe bevalt het je tot nu toe hier op het hku? Hoe zijn je nieuwe medestudenten?
+  - Goed goed, in tegenstelling tot iemand anders heb ik wel vrienden.
   responseOptions:
-  - hier op school is alles wel fijn, maar ik heb wel wat last gehad van een paar
-    van mijn medestudenten
-  - de medestudenten zijn super gezellig tot nu toe, maar ik heb nog wel wat onduidelijkheden
-    over het hku.
+  - oh, uuh ja dat uuh, klopt ja, ik zag het. maar als je me wilt excuseren, ik moet
+    even ergens heen.
+  - Wat fijn voor je man, ben benieuwd hoe lang dat zal blijven als je zo doorgaat.
   chosenAmount: 00000000000000000000000000000000
   inputBreak: 0
   nextDialogueOptions:
-  - {fileID: 11400000, guid: f48d67d83f8bbd24daf961d971fb198a, type: 2}
-  - {fileID: 11400000, guid: 8ae3cbbb56a8eb04694733942e98fccc, type: 2}
+  - {fileID: 11400000, guid: 4fd46452ed76f75419360f6e301c32f8, type: 2}
+  - {fileID: 11400000, guid: dad4725583fbb2247a4019989844c351, type: 2}
