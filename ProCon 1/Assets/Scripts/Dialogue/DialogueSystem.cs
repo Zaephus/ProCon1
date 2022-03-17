@@ -111,6 +111,12 @@ public class DialogueSystem : MonoBehaviour
 		{
 			_tmpProText.text = _tmpProText.text.Substring(0, _tmpProText.text.Length - leadingChar.Length);
 		}
+
+		if (index == currentDialogueOptions.combatBreak)
+		{
+			FindObjectOfType<InteractingState>().OnEnter();
+			yield return null;
+		}
 	}
 
 	public void AddNewDialogueOptions(DialogueOptions _newDialogueOptions)
