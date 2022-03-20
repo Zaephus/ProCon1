@@ -15,7 +15,8 @@ public class PlayerController : MonoBehaviour {
     public float runSpeed = 20.0f;
 
     public void Awake() {
-        this.transform.position = new Vector3(unit.lastPosX,unit.lastPosY,0);
+        //this.transform.position = new Vector3(unit.lastPosX,unit.lastPosY,0);
+        unit.currentHealth = unit.maxHealth;
     }
 
     void Start() {

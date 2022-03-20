@@ -10,6 +10,7 @@ public class NPC_Controller : MonoBehaviour,IInteractable {
 
     public void Awake() {
         //this.transform.position = new Vector3(unit.lastPosX,unit.lastPosY,0);
+        unit.currentHealth = unit.maxHealth;
     }
 
     public void Start() {

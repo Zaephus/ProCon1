@@ -2,22 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//[CreateAssetMenu(fileName = "Unit",menuName = "Unit")]
 public class Unit : ScriptableObject {
 
     public string unitName;
 
-    public int damage;
-
     public int maxHealth;
     public int currentHealth;
 
-    public int maxMana;
-    public int currentMana;
+    public int currentAttack;
+    public int currentDefense;
 
     public bool TakeDamage(int dmg) {
 
-        currentHealth -= dmg;
+        int damage = dmg-currentDefense;
+        if(damage <= 0) {
+            damage = 0;
+        }
+
+        currentHealth -= damage;
 
         if(currentHealth <= 0) {
             currentHealth = 0;
