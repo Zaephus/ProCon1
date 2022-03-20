@@ -1610,7 +1610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4d3a08424172746848d671a802bfa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: {fileID: 11400000, guid: 4a37cc4e8d1d42448b68bf9a6bf25f0d, type: 2}
+  unit: {fileID: 11400000, guid: d44205877ec5bdd48a7ade1e4dc60888, type: 2}
 --- !u!114 &612405323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7804,7 +7804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 385963848}
-  unit: {fileID: 11400000, guid: 0aa199bb13ec12b41bc613ff34367f60, type: 2}
+  unit: {fileID: 11400000, guid: 6f1283229c580ce46aac35dceb755575, type: 2}
   runSpeed: 7
 --- !u!58 &890124971
 CircleCollider2D:

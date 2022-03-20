@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Unit",menuName = "Unit")]
+//[CreateAssetMenu(fileName = "Unit",menuName = "Unit")]
 public class Unit : ScriptableObject {
 
     public string unitName;
@@ -14,9 +14,6 @@ public class Unit : ScriptableObject {
 
     public int maxMana;
     public int currentMana;
-
-    public float lastPosX;
-    public float lastPosY;
 
     public bool TakeDamage(int dmg) {
 
@@ -30,15 +27,6 @@ public class Unit : ScriptableObject {
             return false;
         }
 
-    }
-
-    public void Heal(int amount) {
-
-        currentHealth += amount;
-        if(currentHealth > maxHealth) {
-            currentHealth = maxHealth;
-        }
-        
     }
     
 }

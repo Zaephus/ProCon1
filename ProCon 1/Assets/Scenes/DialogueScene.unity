@@ -223,7 +223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &100931219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2680,7 +2680,7 @@ MonoBehaviour:
   inputBreak: 01000000
   dialogueBox: {fileID: 2058676830}
   optionsBox: {fileID: 1750996133}
-  currentDialogueOptions: {fileID: 11400000, guid: 90946b587ffebf24ebace8046840fc21, type: 2}
+  enemyUnit: {fileID: 11400000, guid: d44205877ec5bdd48a7ade1e4dc60888, type: 2}
   delayBeforeStart: 0
   timeBtwChars: 0.05
   leadingChar: 

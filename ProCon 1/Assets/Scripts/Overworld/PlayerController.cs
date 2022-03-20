@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour {
 
     Rigidbody2D body;
     public Camera playerCamera;
-    public Unit unit;
+    public PlayerUnit unit;
 
     float horizontal;
     float vertical;

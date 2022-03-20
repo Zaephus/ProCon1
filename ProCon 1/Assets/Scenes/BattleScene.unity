@@ -939,8 +939,8 @@ MonoBehaviour:
   enemyPrefab: {fileID: 7395246039282976492, guid: dcd31c81cc34f92418eaa0ce9bfdc5bb, type: 3}
   playerPosition: {fileID: 1377252281}
   enemyPosition: {fileID: 556358800}
-  playerUnit: {fileID: 11400000, guid: 0aa199bb13ec12b41bc613ff34367f60, type: 2}
-  enemyUnit: {fileID: 11400000, guid: 4a37cc4e8d1d42448b68bf9a6bf25f0d, type: 2}
+  playerUnit: {fileID: 11400000, guid: 6f1283229c580ce46aac35dceb755575, type: 2}
+  enemyUnit: {fileID: 11400000, guid: d44205877ec5bdd48a7ade1e4dc60888, type: 2}
   dialogueText: {fileID: 1738281235}
   playerHUD: {fileID: 24504647}
   enemyHUD: {fileID: 2071005300}

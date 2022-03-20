@@ -14,8 +14,8 @@ public class BattleSystem : MonoBehaviour {
     public Transform playerPosition;
     public Transform enemyPosition;
 
-    public Unit playerUnit;
-    public Unit enemyUnit;
+    public PlayerUnit playerUnit;
+    public EnemyUnit enemyUnit;
 
     public Text dialogueText;
 

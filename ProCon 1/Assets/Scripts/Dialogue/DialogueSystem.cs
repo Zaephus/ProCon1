@@ -13,7 +13,9 @@ public class DialogueSystem : MonoBehaviour
 	[SerializeField] private List<int> inputBreak = new List<int>();
 	[SerializeField] private GameObject dialogueBox;
 	[SerializeField] private GameObject optionsBox;
-	[SerializeField] private DialogueOptions currentDialogueOptions;
+	[SerializeField] private EnemyUnit enemyUnit;
+
+	private DialogueOptions currentDialogueOptions;
 	string writer;
 
 	[SerializeField] float delayBeforeStart = 0f;
@@ -30,6 +32,8 @@ public class DialogueSystem : MonoBehaviour
 		{
 			writer = _tmpProText.text;
 		}
+
+		currentDialogueOptions = enemyUnit.startDialogueOption;
 
 		AddNewDialogueOptions(currentDialogueOptions);
 		ActivePercentages(false);
@@ -114,7 +118,7 @@ public class DialogueSystem : MonoBehaviour
 
 		if (index == currentDialogueOptions.combatBreak)
 		{
-			FindObjectOfType<InteractingState>().OnEnter();
+			LevelLoader.instance.LoadLevel("BattleScene");
 			yield return null;
 		}
 	}

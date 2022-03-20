@@ -11,7 +11,7 @@ public class InteractingState : BaseState {
 
         timer = waitDuration;
 
-        LevelLoader.instance.LoadLevel("BattleScene");
+        LevelLoader.instance.LoadLevel("DialogueScene");
 
     }
 
