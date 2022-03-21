@@ -58,9 +58,9 @@ public class BattleSystem : MonoBehaviour {
 
     }
 
-    public IEnumerator PlayerAttack() {
+    public IEnumerator PlayerGISword() {
 
-        dialogueText.text = "The attack is succesful!";
+        dialogueText.text = "You swing the sword of GI with all your might, and hit the enemy!";
         
         yield return new WaitForSeconds(2f);
 
@@ -78,17 +78,53 @@ public class BattleSystem : MonoBehaviour {
 
     }
 
-    public IEnumerator PlayerHeal() {
+    public IEnumerator PlayerInspiringSpeech() {
 
-        dialogueText.text = "You healed by 5 points!";
+        dialogueText.text = "You give an inspiring presentation, intimidating the enemy!";
 
         yield return new WaitForSeconds(2f);
 
-        playerUnit.Heal(5);
-        playerHUD.SetHealth(playerUnit.currentHealth);
+        enemyUnit.currentDefense = (int)((float)enemyUnit.currentDefense*0.9f);
 
         StartCoroutine(EnemyTurn());
         
+    }
+
+    public IEnumerator PlayerLearningALot() {
+
+        dialogueText.text = "You have gained insight, making you more effective!";
+
+        yield return new WaitForSeconds(2f);
+
+        playerUnit.currentAttack = (int)((float)playerUnit.currentAttack*1.1f);
+
+        StartCoroutine(EnemyTurn());
+        
+    }
+
+    public IEnumerator PlayerSelfAssurance() {
+
+        dialogueText.text = "You remind yourself of your strengths, making you stronger!";
+
+        yield return new WaitForSeconds(2f);
+
+        playerUnit.currentDefense = (int)((float)playerUnit.currentDefense*1.1f);
+
+        StartCoroutine(EnemyTurn());
+        
+    }
+
+    public IEnumerator PlayerItems() {
+
+        dialogueText.text = "You eat a 'frikandelbroodje', which increases your health by 50!";
+
+        yield return new WaitForSeconds(2f);
+
+        playerUnit.Heal(50);
+        playerHUD.SetHealth(playerUnit.currentHealth);
+
+        StartCoroutine(EnemyTurn());
+
     }
 
     public IEnumerator EnemyTurn() {
@@ -126,7 +162,8 @@ public class BattleSystem : MonoBehaviour {
         }
         
     }
-    public void OnAttackButton() {
+
+    public void OnGISwordButton() {
 
         if(state != BattleState.PlayerTurn) {
             return;
@@ -134,11 +171,11 @@ public class BattleSystem : MonoBehaviour {
 
         state = BattleState.Wait;
 
-        StartCoroutine(PlayerAttack());
+        StartCoroutine(PlayerGISword());
 
     }
 
-    public void OnHealButton() {
+    public void OnInspiringSpeechButton() {
 
         if(state != BattleState.PlayerTurn) {
             return;
@@ -146,7 +183,43 @@ public class BattleSystem : MonoBehaviour {
 
         state = BattleState.Wait;
 
-        StartCoroutine(PlayerHeal());
+        StartCoroutine(PlayerInspiringSpeech());
+
+    }
+
+    public void OnLearningALotButton() {
+
+        if(state != BattleState.PlayerTurn) {
+            return;
+        }
+
+        state = BattleState.Wait;
+
+        StartCoroutine(PlayerLearningALot());
+
+    }
+
+    public void OnSelfAssuranceButton() {
+
+        if(state != BattleState.PlayerTurn) {
+            return;
+        }
+
+        state = BattleState.Wait;
+
+        StartCoroutine(PlayerSelfAssurance());
+
+    }
+
+    public void OnItemsButton() {
+
+        if(state != BattleState.PlayerTurn) {
+            return;
+        }
+
+        state = BattleState.Wait;
+
+        StartCoroutine(PlayerItems());
 
     }
 

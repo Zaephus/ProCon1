@@ -132,7 +132,6 @@ public class DialogueSystem : MonoBehaviour
 		//Debug.Log(currentDialogueOptions.nextDialogueOptions.Count + " " + buttons.Count);
 		Debug.Log(currentDialogueOptions);
 
-
 		for (int i = 0; i < buttons.Count; i++)
 		{
 			//Debug.Log("aaaah" + i + " " + currentDialogueOptions.nextDialogueOptions.Count + " " + buttons.Count);

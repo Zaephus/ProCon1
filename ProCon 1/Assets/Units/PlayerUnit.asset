@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: PlayerUnit
   m_EditorClassIdentifier: 
   unitName: Player
-  damage: 5
-  maxHealth: 30
-  currentHealth: 30
-  maxMana: 30
-  currentMana: 30
-  lastPosX: 7.028001
-  lastPosY: -4.844003
+  maxHealth: 100
+  currentHealth: 70
+  currentAttack: 20
+  currentDefense: 10
+  lastPosX: 0
+  lastPosY: 0
