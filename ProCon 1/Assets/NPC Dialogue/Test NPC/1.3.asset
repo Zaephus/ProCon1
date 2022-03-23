@@ -21,6 +21,8 @@ MonoBehaviour:
   - 4
   chosenAmount: 00000000000000000000000000000000
   inputBreak: 1
+  combatBreak: -1
+  endBreak: 0
   nextDialogueOptions:
   - {fileID: 11400000, guid: 90946b587ffebf24ebace8046840fc21, type: 2}
   - {fileID: 11400000, guid: 90946b587ffebf24ebace8046840fc21, type: 2}

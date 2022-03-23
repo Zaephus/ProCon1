@@ -17,8 +17,9 @@ MonoBehaviour:
   responseOptions:
   - Bob doet nogal vervelend, heb het gevoel dat die me vaak afzeikt
   - Nee niemand specifiek
-  chosenAmount: 00000000000000000000000000000000
+  chosenAmount: 0000000000000000
   inputBreak: 0
+  combatBreak: -1
   nextDialogueOptions:
   - {fileID: 11400000, guid: dab95ee9b141e1440876cc98b2ffed01, type: 2}
   - {fileID: 11400000, guid: 6cc952fa7e029f9459d51b90f764c587, type: 2}

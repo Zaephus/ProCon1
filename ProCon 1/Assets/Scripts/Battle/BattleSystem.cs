@@ -58,9 +58,9 @@ public class BattleSystem : MonoBehaviour {
 
     }
 
-    public IEnumerator PlayerGISword() {
+    public IEnumerator PlayerTeachingsOfOpenness() {
 
-        dialogueText.text = "You swing the sword of GI with all your might, and hit the enemy!";
+        dialogueText.text = "You teach " + enemyUnit.name +" a thing or two about openness!";
         
         yield return new WaitForSeconds(2f);
 
@@ -153,17 +153,17 @@ public class BattleSystem : MonoBehaviour {
         if(state == BattleState.Won) {
             dialogueText.text = "You won the battle!";
             yield return new WaitForSeconds(2f);
-            LevelLoader.instance.LoadLevel("MainScene");
+            LevelLoader.instance.LoadLevel("LevelOneScene");
         }
         else if(state == BattleState.Lost) {
             dialogueText.text = "You lost.";
             yield return new WaitForSeconds(2f);
-            LevelLoader.instance.LoadLevel("MainScene");
+            LevelLoader.instance.LoadLevel("GameOverScene");
         }
         
     }
 
-    public void OnGISwordButton() {
+    public void OnTeachingsOfOpennessButton() {
 
         if(state != BattleState.PlayerTurn) {
             return;
@@ -171,7 +171,7 @@ public class BattleSystem : MonoBehaviour {
 
         state = BattleState.Wait;
 
-        StartCoroutine(PlayerGISword());
+        StartCoroutine(PlayerTeachingsOfOpenness());
 
     }
 

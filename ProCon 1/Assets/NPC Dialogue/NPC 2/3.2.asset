@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: 3.2
   m_EditorClassIdentifier: 
   dialogueList:
-  - Ziet er naar uit dat iemand hier toch iets minder tact heeft als dat ik dacht.
+  - Ziet er naar uit dat iemand hier toch iets minder tact heeft dan dat ik dacht.
   responseOptions: []
   chosenAmount: 00000000000000000000000000000000
   inputBreak: 5
   combatBreak: 0
+  endBreak: 0
   nextDialogueOptions: []

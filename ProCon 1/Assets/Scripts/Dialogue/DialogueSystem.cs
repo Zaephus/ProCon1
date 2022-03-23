@@ -4,179 +4,226 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class DialogueSystem : MonoBehaviour
-{
-	[SerializeField] private TMP_Text _tmpProText;
-	[SerializeField] private List<TextMeshProUGUI> buttonTexts = new List<TextMeshProUGUI>();
-	[SerializeField] private List<TextMeshProUGUI> buttonPercentagesTexts = new List<TextMeshProUGUI>();
-	[SerializeField] private List<Button> buttons = new List<Button>();
-	[SerializeField] private List<int> inputBreak = new List<int>();
-	[SerializeField] private GameObject dialogueBox;
-	[SerializeField] private GameObject optionsBox;
-	[SerializeField] private EnemyUnit enemyUnit;
+public class DialogueSystem : MonoBehaviour {
 
-	private DialogueOptions currentDialogueOptions;
-	string writer;
+	public TMP_Text dialogueText;
+	public List<DialogueButton> buttons = new List<DialogueButton>();
+	public List<int> inputBreak = new List<int>();
 
-	[SerializeField] float delayBeforeStart = 0f;
-	[SerializeField] float timeBtwChars = 0.1f;
-	[SerializeField] string leadingChar = "";
-	[SerializeField] bool leadingCharBeforeDelay = false;
+	public GameObject dialogueBox;
+	public GameObject optionsBox;
+	public GameObject dialogueButtonPrefab;
+	public GridLayoutGroup buttonGrid;
+	public EnemyUnit enemyUnit;
+
+	private DialogueOptions currentDialogueOption;
+
+	public float delayBeforeStart = 0f;
+	public float timeBetweenChars = 0.1f;
+	public string leadingChar = "";
+	public bool leadingCharBeforeDelay = false;
 
 	private int index = 0;
-	private int inputIndex = 0;
 
-	void Start()
-	{
-		if (_tmpProText != null)
-		{
-			writer = _tmpProText.text;
+	void Start() {
+
+		currentDialogueOption = enemyUnit.startDialogueOption;
+		AddNewDialogueOptions(currentDialogueOption);
+
+		foreach(DialogueButton b in buttons) {
+			b.ActivePercentages(false);
 		}
 
-		currentDialogueOptions = enemyUnit.startDialogueOption;
-
-		AddNewDialogueOptions(currentDialogueOptions);
-		ActivePercentages(false);
 	}
 
-	private void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.Space) && index != currentDialogueOptions.inputBreak)
-		{
-			//if (index == currentDialogueOptions.inputBreak)
-			//{
-			//    _tmpProText.text = "doe even alsof hier nu knoppen staan oke";
-			//}
-			//else
-			//{
+	private void Update() {
+
+		if(Input.GetKeyDown(KeyCode.Space) && index != currentDialogueOption.inputBreak) {
+
 			index++;
-			if (index == currentDialogueOptions.dialogueList.Count)
-			{
+			if(index == currentDialogueOption.dialogueList.Count) {
 				index = 0;
 				dialogueBox.SetActive(false);
 			}
-			else
-			{
+			else {
 				StartDialogue();
 			}
-			//}
+
 		}
+
 	}
 
-	public void StartDialogue()
-	{
-		if (index == currentDialogueOptions.inputBreak)
-		{
-			optionsBox.SetActive(true);
-			for (int i = 0; i < buttonTexts.Count; i++)
-			{
-				buttonTexts[i].text = (i + 1) + ". " + currentDialogueOptions.responseOptions[i];
+	public void StartDialogue() {
+
+		if (index == currentDialogueOption.inputBreak) {
+
+			for(int i = 0; i < currentDialogueOption.responseOptions.Count; i++) {
+
+				GameObject b = Instantiate(dialogueButtonPrefab,buttonGrid.transform.position,Quaternion.identity,optionsBox.transform);
+
+				b.transform.SetParent(buttonGrid.transform,false);
+				b.transform.localScale = new Vector3(1,1,1);
+         		b.transform.localPosition = Vector3.zero;
+
+				buttons.Add(b.GetComponent<DialogueButton>());
+				
+				SetPercentages();
+
 			}
+
+			AddListeners();
+
+			optionsBox.SetActive(true);
+
+			for(int i = 0; i < buttons.Count; i++) {
+				buttons[i].ActivePercentages(false);
+				buttons[i].SetButtonText((i+1) + ". " + currentDialogueOption.responseOptions[i]);
+			}
+
 		}
-		else
-		{
+		else {
 			optionsBox.SetActive(false);
 		}
+
 		dialogueBox.SetActive(true);
-		_tmpProText.text = "";
-		StartCoroutine(TypeWriterTMP(currentDialogueOptions.dialogueList[index]));
+		dialogueText.text = "";
+
+		StartCoroutine(TypeWriter(currentDialogueOption.dialogueList[index]));
+
 	}
 
-	IEnumerator TypeWriterTMP(string _currentDialogue)
-	{
-		_tmpProText.text = leadingCharBeforeDelay ? leadingChar : "";
+	IEnumerator TypeWriter(string _currentDialogue) {
+
+		dialogueText.text = leadingCharBeforeDelay ? leadingChar : "";
 
 		int _thisIndex = index;
 		yield return new WaitForSeconds(delayBeforeStart);
 
-		foreach (char c in _currentDialogue)
-		{
-			if (index != _thisIndex)
-			{
+		foreach(DialogueButton b in buttons) {
+			b.gameObject.SetActive(false);
+		}
+
+		foreach(char c in _currentDialogue) {
+
+			if(index != _thisIndex) {
 				yield break;
 			}
-			if (_tmpProText.text.Length > 0)
-			{
-				_tmpProText.text = _tmpProText.text.Substring(0, _tmpProText.text.Length - leadingChar.Length);
+
+			if(dialogueText.text.Length > 0) {
+				dialogueText.text = dialogueText.text.Substring(0, dialogueText.text.Length - leadingChar.Length);
 			}
-			_tmpProText.text += c;
-			_tmpProText.text += leadingChar;
-			yield return new WaitForSeconds(timeBtwChars);
+
+			dialogueText.text += c;
+			dialogueText.text += leadingChar;
+
+			yield return new WaitForSeconds(timeBetweenChars);
+
 		}
 
 		yield return new WaitForSeconds(0.35f);
 
-		if (index != currentDialogueOptions.inputBreak)
-		{
-			_tmpProText.text += "\npress space to continue";
+		foreach(DialogueButton b in buttons) {
+			b.gameObject.SetActive(true);
 		}
 
-		if (leadingChar != "")
-		{
-			_tmpProText.text = _tmpProText.text.Substring(0, _tmpProText.text.Length - leadingChar.Length);
+		if(index != currentDialogueOption.inputBreak) {
+			dialogueText.text += "\npress space to continue";
 		}
 
-		if (index == currentDialogueOptions.combatBreak)
-		{
-			LevelLoader.instance.LoadLevel("BattleScene");
-			yield return null;
+		if(leadingChar != "") {
+			dialogueText.text = dialogueText.text.Substring(0, dialogueText.text.Length - leadingChar.Length);
 		}
+
+		if(index == currentDialogueOption.endBreak) {
+
+			if(index == currentDialogueOption.combatBreak) {
+				yield return new WaitForSeconds(0.5f);
+				LevelLoader.instance.LoadLevel("BattleScene");
+				yield return null;
+			}
+			else {
+				yield return new WaitForSeconds(0.5f);
+				LevelLoader.instance.LoadLevel("LevelOneScene");
+				yield return null;
+			}
+		
+		}
+
 	}
 
-	public void AddNewDialogueOptions(DialogueOptions _newDialogueOptions)
-	{
+	public void AddNewDialogueOptions(DialogueOptions _newDialogueOptions) {
+
 		SetPercentages();
-		ActivePercentages(true);
-		currentDialogueOptions = _newDialogueOptions;
+
+		foreach(DialogueButton b in buttons) {
+			b.ActivePercentages(true);
+		}
+
+		currentDialogueOption = _newDialogueOptions;
 		index = 0;
-		//Debug.Log(currentDialogueOptions.nextDialogueOptions.Count + " " + buttons.Count);
-		Debug.Log(currentDialogueOptions);
 
-		for (int i = 0; i < buttons.Count; i++)
-		{
-			//Debug.Log("aaaah" + i + " " + currentDialogueOptions.nextDialogueOptions.Count + " " + buttons.Count);
-			buttons[i].onClick.RemoveAllListeners();
-			int x = i;
-			buttons[i].onClick.AddListener(() => this.AddChosenCount(x));
-			buttons[i].onClick.AddListener(() => this.AddNewDialogueOptions(currentDialogueOptions.nextDialogueOptions[x]));
-			//buttons[i].onClick.AddListener(delegate { this.AddNewDialogueOptions(currentDialogueOptions.nextDialogueOptions[i]); });
-			//buttons[i].onClick.AddListener(() => GeenIdee());
-		}
+		Debug.Log(currentDialogueOption);
+
 		StartCoroutine(SetPercentageDelay());
+
 	}
 
-	public IEnumerator SetPercentageDelay()
-    {
-		yield return new WaitForSeconds(1.5f);
+	public void AddListeners() {
+
+		List<Button> buttonUnits = new List<Button>();
+
+		foreach(DialogueButton b in buttons) {
+			buttonUnits.Add(b.GetComponent<Button>());
+		}
+
+		for(int i = 0; i < buttonUnits.Count; i++) {
+
+			buttonUnits[i].onClick.RemoveAllListeners();
+
+			int x = i;
+
+			buttonUnits[i].onClick.AddListener(() => this.AddChosenCount(x));
+			buttonUnits[i].onClick.AddListener(() => this.AddNewDialogueOptions(currentDialogueOption.nextDialogueOptions[x]));
+
+		}
+
+	}
+
+	public IEnumerator SetPercentageDelay() {
+		
+		yield return new WaitForSeconds(3f);
 		optionsBox.SetActive(false);
+
+		for(int i = buttons.Count-1; i >= 0; i--) {
+			Destroy(buttons[i].gameObject);
+			buttons.RemoveAt(i);
+		}
+
 		StartDialogue();
+
 	}
-	private void SetPercentages()
-	{
+
+	private void SetPercentages() {
+
 		float total = 0;
-		for (int i = 0; i < currentDialogueOptions.chosenAmount.Count; i++)
-		{
-			total += currentDialogueOptions.chosenAmount[i];
+		List<float> amounts = new List<float>();
+
+		for(int i = 0; i < currentDialogueOption.chosenAmount.Count; i++) {
+			total += currentDialogueOption.chosenAmount[i];
 		}
-		for (int i = 0; i < currentDialogueOptions.chosenAmount.Count; i++)
-		{
-			float amount = currentDialogueOptions.chosenAmount[i];
-			amount = (amount / total) * 100;
-			buttonPercentagesTexts[i].text = amount + "%";
-			buttonPercentagesTexts[i].text = string.Format("{0:0.00}", amount) + "%";
+
+		for(int i = 0; i < currentDialogueOption.chosenAmount.Count; i++) {
+			amounts.Add((currentDialogueOption.chosenAmount[i]/total)*100);
 		}
+
+		for(int i = 0; i < buttons.Count; i++) {
+			buttons[i].SetPercentageText(amounts[i] + "%");
+			buttons[i].SetPercentageText(string.Format("{0:0.00}", amounts[i]) + "%");
+		}
+
 	}
 
-	private void ActivePercentages(bool _state)
-    {
-        for (int i = 0; i < buttonPercentagesTexts.Count; i++)
-        {
-			buttonPercentagesTexts[i].gameObject.SetActive(_state);
-        }
-    }
-
-	public void AddChosenCount(int _index)
-	{
-		currentDialogueOptions.chosenAmount[_index]++;
+	public void AddChosenCount(int _index) {
+		currentDialogueOption.chosenAmount[_index]++;
 	}
 }

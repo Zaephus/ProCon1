@@ -19,8 +19,9 @@ MonoBehaviour:
     van mijn medestudenten
   - de medestudenten zijn super gezellig tot nu toe, maar ik heb nog wel wat onduidelijkheden
     over het hku.
-  chosenAmount: 00000000000000000000000000000000
+  chosenAmount: 0300000003000000
   inputBreak: 0
+  combatBreak: -1
   nextDialogueOptions:
   - {fileID: 11400000, guid: f48d67d83f8bbd24daf961d971fb198a, type: 2}
   - {fileID: 11400000, guid: 8ae3cbbb56a8eb04694733942e98fccc, type: 2}

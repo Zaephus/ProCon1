@@ -18,10 +18,11 @@ MonoBehaviour:
   responseOptions:
   - 'Ah ja dat dacht ik al, ik vond het al knap hoe je dagelijks in je cosplay ervan
     kwam opdagen. '
-  - ze kunnen soms wel raar zijn inderdaad, maar ik zal ze aan je introduceren als
+  - Ze kunnen soms wel raar zijn inderdaad, maar ik zal ze aan je introduceren als
     ik de kans krijg.
-  chosenAmount: 00000000000000000000000000000000
+  chosenAmount: 01000000020000000100000000000000
   inputBreak: 0
+  combatBreak: -1
   nextDialogueOptions:
   - {fileID: 11400000, guid: 619ff4668db6f594893cfe26005d6143, type: 2}
   - {fileID: 11400000, guid: eae819aedc6888f489ae0b2032b66f14, type: 2}
