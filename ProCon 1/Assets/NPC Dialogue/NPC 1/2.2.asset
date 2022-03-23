@@ -17,8 +17,9 @@ MonoBehaviour:
   responseOptions:
   - Bij wie moet ik zijn voor een discriminatie probleem?
   - Bij wie moet ik zijn als er iemand gepest wordt?
-  chosenAmount: 00000000000000000000000000000000
+  chosenAmount: 0000000000000000
   inputBreak: 0
+  combatBreak: -1
   nextDialogueOptions:
   - {fileID: 11400000, guid: 3a76a51961612944da2454a59ad99817, type: 2}
   - {fileID: 11400000, guid: 3ba2262708da1114791a1393326d9af4, type: 2}
