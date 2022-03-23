@@ -17,6 +17,6 @@ MonoBehaviour:
   responseOptions: []
   chosenAmount: 00000000000000000000000000000000
   inputBreak: 5
-  combatBreak: -1
+  combatBreak: 0
   endBreak: 0
   nextDialogueOptions: []

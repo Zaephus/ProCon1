@@ -9,7 +9,10 @@ public class Unit : ScriptableObject {
     public int maxHealth;
     public int currentHealth;
 
+    public int baseAttack;
     public int currentAttack;
+
+    public int baseDefense;
     public int currentDefense;
 
     public bool TakeDamage(int dmg) {

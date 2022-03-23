@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Player
   maxHealth: 100
-  currentHealth: 70
+  currentHealth: 100
+  baseAttack: 20
   currentAttack: 20
+  baseDefense: 10
   currentDefense: 10
   lastPosX: 0
   lastPosY: 0

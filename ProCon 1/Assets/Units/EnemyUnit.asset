@@ -15,6 +15,8 @@ MonoBehaviour:
   unitName: Pro-Agressor
   maxHealth: 100
   currentHealth: 100
-  currentAttack: 30
+  baseAttack: 40
+  currentAttack: 40
+  baseDefense: 0
   currentDefense: 0
   startDialogueOption: {fileID: 11400000, guid: 05c6c762b1b4e5042b68b4463f8d9419, type: 2}
