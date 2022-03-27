@@ -13,6 +13,8 @@ public class PlayerInteract : MonoBehaviour {
 
     private bool canInteract = false;
 
+    public bool fightOnContact = false;
+
     public void Start() {
 
         prompt.enabled = false;
@@ -40,7 +42,10 @@ public class PlayerInteract : MonoBehaviour {
 
             prompt.enabled = true;
             prompt.transform.position = promptPosition;
-
+            if(fightOnContact)
+            {
+                LevelLoader.instance.LoadLevel("BattleScene");
+            }
         }
 
     }

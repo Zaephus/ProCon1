@@ -103,9 +103,9 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.03}
   m_SpriteTilingProperty:
-    border: {x: 0.1875, y: 0.0625, z: 0.3125, w: 0.125}
+    border: {x: 0.3, y: 0.1, z: 0.5, w: 0.2}
     pivot: {x: 0.44, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.6, y: 1.6}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -148,6 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit: {fileID: 11400000, guid: d44205877ec5bdd48a7ade1e4dc60888, type: 2}
+  spriteRenderer: {fileID: 5979072749453780953}
+  sprites: []
 --- !u!114 &5979072749453780957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +165,7 @@ MonoBehaviour:
   npc: {fileID: 5979072749453780952}
   stoppingDist: 0.5
   maxSpeed: 3
+  canWalk: 1
   wayPoints:
   - {fileID: 0}
   - {fileID: 0}
