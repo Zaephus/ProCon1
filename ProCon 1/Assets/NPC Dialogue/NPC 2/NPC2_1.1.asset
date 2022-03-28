@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5c11855403434d4fa79a3404a9e3281, type: 3}
-  m_Name: 1.1
+  m_Name: NPC2_1.1
   m_EditorClassIdentifier: 
   dialogueList:
   - "H\xE9 nerd, hoe gaat het? Nog steeds een te grote schijterd om met mensen buiten
@@ -19,8 +19,10 @@ MonoBehaviour:
   - he, uuh, gaat prima hoor, met jou?
   - uuh hoe bedoel je, ik praat super veel met andere studenten, je kent ze alleen
     niet, ze gaan naar een andere studierichting.
-  chosenAmount: 00000000000000000000000000000000
+  chosenAmount: 0300000005000000
   inputBreak: 0
+  combatBreak: -1
+  endBreak: -1
   nextDialogueOptions:
   - {fileID: 11400000, guid: 819132a1b4d717d4ab7241d75d0b59a8, type: 2}
   - {fileID: 11400000, guid: 32b5ebf50d41d724eb7a59bb13e020ad, type: 2}

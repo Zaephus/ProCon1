@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5c11855403434d4fa79a3404a9e3281, type: 3}
-  m_Name: 3.3
+  m_Name: NPC2_3.1
   m_EditorClassIdentifier: 
   dialogueList:
-  - Oh ja? ga zo door en je zal gaan piepen als een clownsneus.
+  - Hoe kan iemand zoals jou nog iets te doen hebben?
   responseOptions: []
   chosenAmount: 00000000000000000000000000000000
   inputBreak: 5
-  combatBreak: 0
+  combatBreak: -1
   endBreak: 0
   nextDialogueOptions: []

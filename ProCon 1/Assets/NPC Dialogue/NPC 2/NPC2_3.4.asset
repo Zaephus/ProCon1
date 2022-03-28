@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5c11855403434d4fa79a3404a9e3281, type: 3}
-  m_Name: 3.4
+  m_Name: NPC2_3.4
   m_EditorClassIdentifier: 
   dialogueList:
   - hahaha wat denk je nou zelf, tuurlijk wil ik dat niet
