@@ -60,7 +60,7 @@ public class BattleSystem : MonoBehaviour {
 
     public IEnumerator PlayerTeachingsOfOpenness() {
 
-        dialogueText.text = "You teach " + enemyUnit.name +" a thing or two about openness!";
+        dialogueText.text = "You teach " + enemyUnit.unitName +" a thing or two about openness!";
         
         yield return new WaitForSeconds(2f);
 

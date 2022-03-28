@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-    Rigidbody2D body;
+    private bool initDone = false;
+
+    public Rigidbody2D body;
     public Camera playerCamera;
     public PlayerUnit unit;
 
@@ -14,15 +16,22 @@ public class PlayerController : MonoBehaviour {
 
     public float runSpeed = 20.0f;
 
-    public void Awake() {
-        //this.transform.position = new Vector3(unit.lastPosX,unit.lastPosY,0);
+    void Start() {
+        
+        SaveSystem.instance.LoadUnit(unit,unit.name);
+
+        if(initDone == false) {
+            initDone = true;
+            unit.lastPosX = unit.startPosX;
+            unit.lastPosY = unit.startPosY;
+        }
+
+        this.transform.position = new Vector2(unit.lastPosX,unit.lastPosY);
+        
         unit.currentHealth = unit.maxHealth;
         unit.currentAttack = unit.baseAttack;
         unit.currentDefense = unit.baseDefense;
-    }
 
-    void Start() {
-        body = GetComponent<Rigidbody2D>();
     }
 
     void Update() {

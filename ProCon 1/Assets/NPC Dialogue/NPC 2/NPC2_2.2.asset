@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5c11855403434d4fa79a3404a9e3281, type: 3}
-  m_Name: 2.2
+  m_Name: NPC2_2.2
   m_EditorClassIdentifier: 
   dialogueList:
   - aha wat leuk, zou je me naar ze kunnen introduceren? Ben altijd al een fan geweest
@@ -20,9 +20,10 @@ MonoBehaviour:
     kwam opdagen. '
   - Ze kunnen soms wel raar zijn inderdaad, maar ik zal ze aan je introduceren als
     ik de kans krijg.
-  chosenAmount: 01000000020000000100000000000000
+  chosenAmount: 0400000002000000
   inputBreak: 0
   combatBreak: -1
+  endBreak: -1
   nextDialogueOptions:
   - {fileID: 11400000, guid: 619ff4668db6f594893cfe26005d6143, type: 2}
   - {fileID: 11400000, guid: eae819aedc6888f489ae0b2032b66f14, type: 2}
