@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Unit : ScriptableObject {
 
     public string unitName;
@@ -14,6 +15,12 @@ public class Unit : ScriptableObject {
 
     public int baseDefense;
     public int currentDefense;
+
+    public float startPosX;
+    public float startPosY;
+
+    public float lastPosX;
+    public float lastPosY;
 
     public bool TakeDamage(int dmg) {
 
@@ -33,5 +40,26 @@ public class Unit : ScriptableObject {
         }
 
     }
+    
+}
+
+public class UnitSaver {
+
+    public string unitName;
+
+    public int maxHealth;
+    public int currentHealth;
+
+    public int baseAttack;
+    public int currentAttack;
+
+    public int baseDefense;
+    public int currentDefense;
+
+    public float startPosX;
+    public float startPosY;
+
+    public float lastPosX;
+    public float lastPosY;
     
 }

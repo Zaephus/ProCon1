@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerInteract : MonoBehaviour {
 
+    public PlayerController player;
+
     public Image prompt;
 
     private Vector2 promptPosition;
@@ -27,6 +29,7 @@ public class PlayerInteract : MonoBehaviour {
                 interact.Interact();
                 prompt.enabled = false;
                 canInteract = false;
+                SaveSystem.instance.SaveUnit(player.unit,player.unit.name);
             }
 
     }
@@ -44,6 +47,7 @@ public class PlayerInteract : MonoBehaviour {
             prompt.transform.position = promptPosition;
             if(fightOnContact)
             {
+                SaveSystem.instance.SaveUnit(player.unit,player.unit.name);
                 LevelLoader.instance.LoadLevel("BattleScene");
             }
         }

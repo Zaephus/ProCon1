@@ -162,6 +162,7 @@ public class DialogueSystem : MonoBehaviour {
 		currentDialogueOption = _newDialogueOptions;
 		index = 0;
 
+		SaveSystem.instance.LoadDialogueOption(currentDialogueOption,currentDialogueOption.name);
 		Debug.Log(currentDialogueOption);
 
 		StartCoroutine(SetPercentageDelay());
@@ -208,11 +209,11 @@ public class DialogueSystem : MonoBehaviour {
 		float total = 0;
 		List<float> amounts = new List<float>();
 
-		for(int i = 0; i < currentDialogueOption.chosenAmount.Count; i++) {
+		for(int i = 0; i < currentDialogueOption.chosenAmount.Length; i++) {
 			total += currentDialogueOption.chosenAmount[i];
 		}
 
-		for(int i = 0; i < currentDialogueOption.chosenAmount.Count; i++) {
+		for(int i = 0; i < currentDialogueOption.chosenAmount.Length; i++) {
 			amounts.Add((currentDialogueOption.chosenAmount[i]/total)*100);
 		}
 
@@ -225,5 +226,6 @@ public class DialogueSystem : MonoBehaviour {
 
 	public void AddChosenCount(int _index) {
 		currentDialogueOption.chosenAmount[_index]++;
+		SaveSystem.instance.SaveDialogueOption(currentDialogueOption,currentDialogueOption.name);
 	}
 }

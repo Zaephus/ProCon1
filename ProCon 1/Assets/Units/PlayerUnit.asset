@@ -19,5 +19,7 @@ MonoBehaviour:
   currentAttack: 20
   baseDefense: 10
   currentDefense: 10
-  lastPosX: 0
-  lastPosY: 0
+  startPosX: 13
+  startPosY: 9
+  lastPosX: 7.2049894
+  lastPosY: 2.306003

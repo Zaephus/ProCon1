@@ -5,6 +5,8 @@ using UnityEngine;
 public class NPC_Controller : MonoBehaviour, IInteractable
 {
 
+    private bool initDone = false;
+
     private FSM fsm;
 
     public EnemyUnit unit;
@@ -12,18 +14,24 @@ public class NPC_Controller : MonoBehaviour, IInteractable
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private List<Sprite> sprites = new List<Sprite>();
 
-    public void Awake()
-    {
-        //this.transform.position = new Vector3(unit.lastPosX,unit.lastPosY,0);
-        unit.currentHealth = unit.maxHealth;
-        unit.currentAttack = unit.baseAttack;
-        unit.currentDefense = unit.baseDefense;
-    }
-
     public void Start()
     {
 
+        SaveSystem.instance.LoadUnit(unit,unit.name);
+
+        if(initDone == false) {
+            initDone = true;
+            unit.lastPosX = unit.startPosX;
+            unit.lastPosY = unit.startPosY;
+        }
+
         fsm = new FSM(typeof(IdleState), GetComponents<BaseState>());
+
+        this.transform.position = new Vector2(unit.lastPosX,unit.lastPosY);
+
+        unit.currentHealth = unit.maxHealth;
+        unit.currentAttack = unit.baseAttack;
+        unit.currentDefense = unit.baseDefense;
 
     }
 
@@ -32,8 +40,8 @@ public class NPC_Controller : MonoBehaviour, IInteractable
 
         fsm.OnUpdate();
 
-        // unit.lastPosX = this.transform.position.x;
-        // unit.lastPosY = this.transform.position.y;
+        unit.lastPosX = this.transform.position.x;
+        unit.lastPosY = this.transform.position.y;
 
     }
 
@@ -41,6 +49,7 @@ public class NPC_Controller : MonoBehaviour, IInteractable
     {
 
         fsm.SwitchState(typeof(InteractingState));
+        SaveSystem.instance.SaveUnit(unit,unit.name);
 
     }
 
