@@ -10,6 +10,9 @@ public class DimensionSwitching : MonoBehaviour
 
     [SerializeField] private bool inNormalDimension = false;
 
+    [SerializeField] private List<GameObject> normalObjects = new List<GameObject>();
+    [SerializeField] private List<GameObject> monsterObjects = new List<GameObject>();
+
     private void Start()
     {
         SwitchDimension();
@@ -20,11 +23,11 @@ public class DimensionSwitching : MonoBehaviour
         inNormalDimension = !inNormalDimension;
         if(inNormalDimension)
         {
-            SetWalkingState(false);
+            SetSwitchedStates(false);
         }
         else
         {
-            SetWalkingState(true);
+            SetSwitchedStates(true);
         }
         for (int i = 0; i < NPC_Controllers.Count; i++)
         {
@@ -33,7 +36,7 @@ public class DimensionSwitching : MonoBehaviour
         //Hier nog tile maps aan en uit zetten
     }
 
-    private void SetWalkingState(bool _setting)
+    private void SetSwitchedStates(bool _setting)
     {
         for (int i = 0; i < patrolStates.Count; i++)
         {
@@ -42,6 +45,15 @@ public class DimensionSwitching : MonoBehaviour
         for (int i = 0; i < playerInteract.Count; i++)
         {
             playerInteract[i].fightOnContact = _setting;
+        }
+
+        for (int i = 0; i < normalObjects.Count; i++)
+        {
+            normalObjects[i].SetActive(!_setting);
+        }
+        for (int i = 0; i < monsterObjects.Count; i++)
+        {
+            monsterObjects[i].SetActive(_setting);
         }
     }
 }
