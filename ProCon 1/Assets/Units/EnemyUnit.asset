@@ -21,6 +21,7 @@ MonoBehaviour:
   currentDefense: 0
   startPosX: 10
   startPosY: -0.5
-  lastPosX: 0
-  lastPosY: 0
+  lastPosX: 8.297201
+  lastPosY: -0.9199734
+  canSpawn: 0
   startDialogueOption: {fileID: 11400000, guid: 05c6c762b1b4e5042b68b4463f8d9419, type: 2}

@@ -7455,6 +7455,8 @@ MonoBehaviour:
   - {fileID: 306257598}
   - {fileID: 419188780}
   - {fileID: 63338371}
+  controllers:
+  - {fileID: 31790331}
 --- !u!4 &518470321
 Transform:
   m_ObjectHideFlags: 0

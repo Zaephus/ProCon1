@@ -13,6 +13,11 @@ public class InteractingState : BaseState {
 
         LevelLoader.instance.LoadLevel("DialogueScene");
 
+        if(TryGetComponent(out NPC_Controller controller))
+		{
+            controller.unit.canSpawn = true;
+		}
+
     }
 
     public override void OnUpdate() {

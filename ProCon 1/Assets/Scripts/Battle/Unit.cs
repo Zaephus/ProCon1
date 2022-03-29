@@ -22,6 +22,8 @@ public class Unit : ScriptableObject {
     public float lastPosX;
     public float lastPosY;
 
+    public bool canSpawn;
+
     public bool TakeDamage(int dmg) {
 
         int damage = dmg-currentDefense;
