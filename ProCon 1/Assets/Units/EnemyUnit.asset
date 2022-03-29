@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Pro-Agressor
   maxHealth: 100
-  currentHealth: 100
+  currentHealth: 80
   baseAttack: 40
   currentAttack: 40
   baseDefense: 0
-  currentDefense: 0
+  currentDefense: 8
   startPosX: 10
   startPosY: -0.5
   lastPosX: 0
