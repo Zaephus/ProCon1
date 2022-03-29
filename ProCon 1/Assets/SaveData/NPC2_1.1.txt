@@ -1,6 +1,6 @@
 {
     "chosenAmount": [
         6,
-        7
+        8
     ]
 }

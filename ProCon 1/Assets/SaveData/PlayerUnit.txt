@@ -8,6 +8,6 @@
     "currentDefense": 10,
     "startPosX": 0.0,
     "startPosY": 0.0,
-    "lastPosX": 11.34299087524414,
-    "lastPosY": -0.2899986803531647
+    "lastPosX": 8.816341400146485,
+    "lastPosY": -0.26499757170677187
 }
