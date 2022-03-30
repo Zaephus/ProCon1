@@ -41,6 +41,11 @@ public class DimensionSwitching : MonoBehaviour
 		// 	patrolStates[i].canWalk = _setting;
 		// }
 
+		if(bob.unit.option == 2) {
+			bob.unit.spawnInAltWorld = false;
+			bob.unit.inAltWorld = false;
+		}
+
 		if(bob.unit.currentHealth <= 0) {
 			bob.unit.spawnInAltWorld = false;
 			bob.unit.inAltWorld = false;
