@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843d8fd70d816844ead79ffa44758661, type: 3}
   m_Name: PlayerUnit
   m_EditorClassIdentifier: 
-  unitName: Player
+  unitName: PRO-tagonist
   maxHealth: 100
   currentHealth: 100
   baseAttack: 20
   currentAttack: 20
   baseDefense: 10
   currentDefense: 10
-  startPosX: 13
-  startPosY: 9
-  lastPosX: 7.2049894
-  lastPosY: 2.306003
+  startPosX: -5.5
+  startPosY: 0
+  lastPosX: 11.254988
+  lastPosY: 8.103861
+  canSpawn: 0

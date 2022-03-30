@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6743ef04c9b1e144089a20cf384da11c, type: 3}
+  m_Name: EnemyUnit_Sanne
+  m_EditorClassIdentifier: 
+  unitName: Sanne
+  maxHealth: 0
+  currentHealth: 0
+  baseAttack: 0
+  currentAttack: 0
+  baseDefense: 0
+  currentDefense: 0
+  startPosX: 12
+  startPosY: -1
+  lastPosX: 12
+  lastPosY: -1
+  canSpawn: 1
+  startDialogueOption: {fileID: 11400000, guid: 6547220ad4c63e249940108ec45e9222, type: 2}
+  option: 0
+  firstAlternateDialogueOption: {fileID: 11400000, guid: b4c18d83268f7c245b137aebaf183776, type: 2}
+  secondAlternateDialogueOption: {fileID: 11400000, guid: b86c6ffbdd39d9f4d8f7e260d42d02cd, type: 2}
+  firstAltWorldDialogueOption: {fileID: 11400000, guid: b86c6ffbdd39d9f4d8f7e260d42d02cd, type: 2}
+  firstMainWorldDialogueOption: {fileID: 11400000, guid: b86c6ffbdd39d9f4d8f7e260d42d02cd, type: 2}
+  secondAltWorldDialogueOption: {fileID: 11400000, guid: b86c6ffbdd39d9f4d8f7e260d42d02cd, type: 2}
+  secondMainWorldDialogueOption: {fileID: 11400000, guid: b86c6ffbdd39d9f4d8f7e260d42d02cd, type: 2}
+  battleDialogueOption: {fileID: 0}
+  inAltWorld: 0
+  spawnInAltWorld: 0
+  unitPrefab: {fileID: 125858760154975388, guid: 7d6d25152fe176a45a2d1199ca79aecc, type: 3}

@@ -1,5 +1,5 @@
 {
-    "unitName": "Player",
+    "unitName": "PRO-tagonist",
     "maxHealth": 100,
     "currentHealth": 100,
     "baseAttack": 20,
@@ -8,6 +8,6 @@
     "currentDefense": 10,
     "startPosX": 0.0,
     "startPosY": 0.0,
-    "lastPosX": 8.816341400146485,
-    "lastPosY": -0.26499757170677187
+    "lastPosX": 2.9581615924835207,
+    "lastPosY": 8.619351387023926
 }

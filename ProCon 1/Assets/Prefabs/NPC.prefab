@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 526496496398726965}
   - component: {fileID: 5979072749453780951}
   - component: {fileID: 5979072749453780955}
-  - component: {fileID: 5979072749453780957}
   - component: {fileID: 5979072749453780956}
   - component: {fileID: 5979072749453780954}
   m_Layer: 7
@@ -150,26 +149,6 @@ MonoBehaviour:
   unit: {fileID: 11400000, guid: d44205877ec5bdd48a7ade1e4dc60888, type: 2}
   spriteRenderer: {fileID: 5979072749453780953}
   sprites: []
---- !u!114 &5979072749453780957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5979072749453780948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c71fb17fd70dab4ea2de5655686b12a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npc: {fileID: 5979072749453780952}
-  stoppingDist: 0.5
-  maxSpeed: 3
-  canWalk: 1
-  wayPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &5979072749453780956
 MonoBehaviour:
   m_ObjectHideFlags: 0

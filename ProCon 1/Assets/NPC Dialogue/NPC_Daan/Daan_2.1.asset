@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5c11855403434d4fa79a3404a9e3281, type: 3}
+  m_Name: Daan_2.1
+  m_EditorClassIdentifier: 
+  dialogueList:
+  - Dat had ik nog niet gezegd. Gewoon blijven in ademen.
+  responseOptions:
+  - Raken je longen dan niet vol?
+  - Wat een raar gedoe
+  chosenAmount: 0000000000000000
+  inputBreak: 0
+  combatBreak: -1
+  endBreak: -1
+  nextDialogueOptions:
+  - {fileID: 11400000, guid: d79ec7b92254381409c1b156e91e39af, type: 2}
+  - {fileID: 11400000, guid: 85a543b84b8241e4aaf29e7c9a349652, type: 2}

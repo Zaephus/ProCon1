@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5c11855403434d4fa79a3404a9e3281, type: 3}
+  m_Name: Evi_2.1
+  m_EditorClassIdentifier: 
+  dialogueList:
+  - Dat weet ik niet zeker. Heb je er iets op tegen om in een groep te werken?
+  responseOptions:
+  - Ik werk liever alleen, dat gaat sneller.
+  - Liever in groepen, want dan kan je veel van anderen leren.
+  chosenAmount: 0000000000000000
+  inputBreak: 0
+  combatBreak: -1
+  endBreak: -1
+  nextDialogueOptions:
+  - {fileID: 11400000, guid: 2e1f47d1de6e95c40803ab0c95c37691, type: 2}
+  - {fileID: 11400000, guid: d3afc6ecd1f60384fa1d7e4b7a631f23, type: 2}

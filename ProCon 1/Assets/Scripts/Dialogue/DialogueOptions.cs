@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "DialogueOptions", menuName = "ScriptableObjects/DialogueOptions", order = 0)]
+[CreateAssetMenu(fileName = "DialogueOptions", menuName = "DialogueOptions")]
 public class DialogueOptions : ScriptableObject
 {
     public List<string> dialogueList = new List<string>();
@@ -11,6 +11,11 @@ public class DialogueOptions : ScriptableObject
     public int inputBreak;
     public int combatBreak = -1;
     public int endBreak = -1;
+
+    public int permamentEndBreak = -1;
+    public bool spawnInAltWorld = false;
+
+    public int broodjesToGive = 0;
     public List<DialogueOptions> nextDialogueOptions = new List<DialogueOptions>();
 
 }

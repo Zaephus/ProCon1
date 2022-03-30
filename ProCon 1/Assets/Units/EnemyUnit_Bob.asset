@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6743ef04c9b1e144089a20cf384da11c, type: 3}
+  m_Name: EnemyUnit_Bob
+  m_EditorClassIdentifier: 
+  unitName: Intimi-NATOR
+  maxHealth: 100
+  currentHealth: 100
+  baseAttack: 40
+  currentAttack: 40
+  baseDefense: 0
+  currentDefense: 0
+  startPosX: 13
+  startPosY: 6
+  lastPosX: 13
+  lastPosY: 6
+  canSpawn: 1
+  startDialogueOption: {fileID: 11400000, guid: e6be2df84907db943a0ba125938cdb98, type: 2}
+  option: 0
+  firstAlternateDialogueOption: {fileID: 11400000, guid: 4afe14133f875de479379538ce2901ed, type: 2}
+  secondAlternateDialogueOption: {fileID: 11400000, guid: 40a7c4cba39923741a1f8cdd0e7d05d1, type: 2}
+  firstAltWorldDialogueOption: {fileID: 11400000, guid: b86c6ffbdd39d9f4d8f7e260d42d02cd, type: 2}
+  firstMainWorldDialogueOption: {fileID: 11400000, guid: b86c6ffbdd39d9f4d8f7e260d42d02cd, type: 2}
+  secondAltWorldDialogueOption: {fileID: 11400000, guid: b86c6ffbdd39d9f4d8f7e260d42d02cd, type: 2}
+  secondMainWorldDialogueOption: {fileID: 11400000, guid: b86c6ffbdd39d9f4d8f7e260d42d02cd, type: 2}
+  battleDialogueOption: {fileID: 11400000, guid: 687bff2a077adbc4a8eeefee21c99d9d, type: 2}
+  inAltWorld: 0
+  spawnInAltWorld: 0
+  unitPrefab: {fileID: 7395246039282976492, guid: dcd31c81cc34f92418eaa0ce9bfdc5bb, type: 3}

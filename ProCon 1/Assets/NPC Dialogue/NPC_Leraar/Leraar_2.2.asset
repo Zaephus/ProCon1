@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5c11855403434d4fa79a3404a9e3281, type: 3}
+  m_Name: Leraar_2.2
+  m_EditorClassIdentifier: 
+  dialogueList:
+  - Start met jezelf te introduceren aan iedereen. Het is altijd handig om een paar
+    mensen te kennen.
+  responseOptions:
+  - Hoe doe ik dat?
+  - Wat als iemand vervelend doet?
+  chosenAmount: 0000000000000000
+  inputBreak: 0
+  combatBreak: -1
+  endBreak: -1
+  nextDialogueOptions:
+  - {fileID: 11400000, guid: 5cce4d384d9a6144db1dbd548b1b33f3, type: 2}
+  - {fileID: 11400000, guid: 5e323c60d019bf94c90f6e23bdde7a94, type: 2}

@@ -7,4 +7,20 @@ public class EnemyUnit : Unit {
 
     public DialogueOptions startDialogueOption;
 
+    public int option = 0;
+    public DialogueOptions firstAlternateDialogueOption;
+    public DialogueOptions secondAlternateDialogueOption;
+
+    public DialogueOptions firstAltWorldDialogueOption;
+    public DialogueOptions firstMainWorldDialogueOption;
+    public DialogueOptions secondAltWorldDialogueOption;
+    public DialogueOptions secondMainWorldDialogueOption;
+
+    public DialogueOptions battleDialogueOption;
+
+    public bool inAltWorld = false;
+    public bool spawnInAltWorld = false;
+
+    public GameObject unitPrefab;
+    
 }

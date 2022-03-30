@@ -1,0 +1,13 @@
+{
+    "unitName": "Intimi-NATOR",
+    "maxHealth": 100,
+    "currentHealth": 0,
+    "baseAttack": 40,
+    "currentAttack": 40,
+    "baseDefense": 0,
+    "currentDefense": 0,
+    "startPosX": 0.0,
+    "startPosY": 0.0,
+    "lastPosX": 13.0,
+    "lastPosY": 6.0
+}

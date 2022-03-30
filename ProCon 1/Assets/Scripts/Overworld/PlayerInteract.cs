@@ -11,7 +11,7 @@ public class PlayerInteract : MonoBehaviour {
 
     private Vector2 promptPosition;
 
-    IInteractable interact;
+    public IInteractable interact;
 
     private bool canInteract = false;
 
@@ -45,11 +45,7 @@ public class PlayerInteract : MonoBehaviour {
 
             prompt.enabled = true;
             prompt.transform.position = promptPosition;
-            if(fightOnContact)
-            {
-                SaveSystem.instance.SaveUnit(player.unit,player.unit.name);
-                LevelLoader.instance.LoadLevel("BattleScene");
-            }
+
         }
 
     }

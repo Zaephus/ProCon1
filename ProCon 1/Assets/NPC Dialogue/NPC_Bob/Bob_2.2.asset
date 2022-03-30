@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5c11855403434d4fa79a3404a9e3281, type: 3}
+  m_Name: Bob_2.2
+  m_EditorClassIdentifier: 
+  dialogueList:
+  - Ja en als je nu niet heel snel mij de frikandel broodjes geeft, maak ik er 6
+    van.
+  responseOptions:
+  - Maak het 3 en we hebben een deal.
+  - Maak er maar 6 van ik betaal ze toch niet!
+  chosenAmount: 0000000000000000
+  inputBreak: 0
+  combatBreak: -1
+  endBreak: -1
+  permamentEndBreak: -1
+  spawnInAltWorld: 1
+  broodjesToGive: 0
+  nextDialogueOptions:
+  - {fileID: 11400000, guid: d33a5526f67f74540b298f3ef513670a, type: 2}
+  - {fileID: 11400000, guid: 31eb9698c2746c74eb0d98c6cae4e9a9, type: 2}

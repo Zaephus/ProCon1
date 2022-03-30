@@ -5,8 +5,6 @@ using UnityEngine;
 public class NPC_Controller : MonoBehaviour, IInteractable
 {
 
-    private bool initDone = false;
-
     private FSM fsm;
 
     public EnemyUnit unit;
@@ -18,12 +16,6 @@ public class NPC_Controller : MonoBehaviour, IInteractable
     {
 
         SaveSystem.instance.LoadUnit(unit,unit.name);
-
-        if(initDone == false) {
-            initDone = true;
-            unit.lastPosX = unit.startPosX;
-            unit.lastPosY = unit.startPosY;
-        }
 
         fsm = new FSM(typeof(IdleState), GetComponents<BaseState>());
 

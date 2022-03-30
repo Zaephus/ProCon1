@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-    private bool initDone = false;
-
     public Rigidbody2D body;
     public Camera playerCamera;
     public PlayerUnit unit;
@@ -19,12 +17,6 @@ public class PlayerController : MonoBehaviour {
     void Start() {
         
         SaveSystem.instance.LoadUnit(unit,unit.name);
-
-        if(initDone == false) {
-            initDone = true;
-            unit.lastPosX = unit.startPosX;
-            unit.lastPosY = unit.startPosY;
-        }
 
         this.transform.position = new Vector2(unit.lastPosX,unit.lastPosY);
         

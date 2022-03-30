@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5c11855403434d4fa79a3404a9e3281, type: 3}
+  m_Name: Sanne_1
+  m_EditorClassIdentifier: 
+  dialogueList:
+  - Hey jij daar! Ja jij! Mijn naam is Sanne. Ik heb twee vragen waar ik jouw antwoord
+    op wil weten. Heb je even de tijd? Je krijgt er een frikandelbroodje voor per
+    antwoord.
+  responseOptions:
+  - Ja sure, alles voor wat frikandelbroodjes.
+  - Liever niet nu, ik het het nogal druk.
+  chosenAmount: 0000000000000000
+  inputBreak: 0
+  combatBreak: -1
+  endBreak: -1
+  permamentEndBreak: -1
+  spawnInAltWorld: 0
+  broodjesToGive: 0
+  nextDialogueOptions:
+  - {fileID: 11400000, guid: ef7e01b644817b14eba769a5ef795775, type: 2}
+  - {fileID: 11400000, guid: dba45bc49e226654abd7a4b218636f3c, type: 2}

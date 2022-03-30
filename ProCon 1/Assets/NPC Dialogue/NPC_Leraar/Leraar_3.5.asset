@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5c11855403434d4fa79a3404a9e3281, type: 3}
+  m_Name: Leraar_3.5
+  m_EditorClassIdentifier: 
+  dialogueList:
+  - Gewoon vervelend is niet iets om je druk over te maken, maar indien iemand aan
+    dingen zoals pesten of intimidatie doet, kun je naar een vertrouwenspersoon stappen.
+  responseOptions: []
+  chosenAmount: 
+  inputBreak: 0
+  combatBreak: -1
+  endBreak: 0
+  permamentEndBreak: -1
+  spawnInAltWorld: 0
+  broodjesToGive: 0
+  nextDialogueOptions: []

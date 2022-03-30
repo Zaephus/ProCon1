@@ -1,0 +1,13 @@
+{
+    "unitName": "Leraar",
+    "maxHealth": 100,
+    "currentHealth": 100,
+    "baseAttack": 40,
+    "currentAttack": 40,
+    "baseDefense": 10,
+    "currentDefense": 10,
+    "startPosX": 0.0,
+    "startPosY": 0.0,
+    "lastPosX": 5.0,
+    "lastPosY": 5.0
+}

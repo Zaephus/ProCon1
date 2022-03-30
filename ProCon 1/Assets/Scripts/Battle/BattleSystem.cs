@@ -11,27 +11,50 @@ public enum BattleState {Start,PlayerTurn,EnemyTurn,Wait,Won,Lost}
 public class BattleSystem : MonoBehaviour {
 
     public GameObject playerPrefab;
-    public GameObject enemyPrefab;
+    private GameObject enemyPrefab;
 
     public Transform playerPosition;
     public Transform enemyPosition;
 
     public PlayerUnit playerUnit;
-    public EnemyUnit enemyUnit;
+    private EnemyUnit currentUnit;
+	public List<EnemyUnit> units = new List<EnemyUnit>();
 
     public Text dialogueText;
 
+    public GameObject combatButtons;
+
     public BattleHUD playerHUD;
     public BattleHUD enemyHUD;
-
-    public AttackInfo attackInfo;
 
     public BattleState state;
 
     public void Start() {
 
+        Unit tempUnit = new Unit();
+		SaveSystem.instance.LoadUnit(tempUnit,"CurrentUnit");
+
+		foreach(EnemyUnit unit in units) {
+			if(unit.unitName == tempUnit.unitName) {
+				currentUnit = unit;
+			}
+		}
+
+        enemyPrefab = currentUnit.unitPrefab;
+
         state = BattleState.Start;
         StartCoroutine(SetupBattle());
+
+    }
+
+    public void Update() {
+
+        if(state != BattleState.PlayerTurn) {
+            combatButtons.SetActive(false);
+        }
+        else {
+            combatButtons.SetActive(true);
+        }
 
     }
 
@@ -41,10 +64,10 @@ public class BattleSystem : MonoBehaviour {
 
         GameObject enemy = Instantiate(enemyPrefab,enemyPosition.position,Quaternion.identity,this.transform);
 
-        dialogueText.text = "A wild " + enemyUnit.unitName + " approaches!!";
+        dialogueText.text = currentUnit.unitName + " staat in de weg!!";
 
         playerHUD.SetHUD(playerUnit);
-        enemyHUD.SetHUD(enemyUnit);
+        enemyHUD.SetHUD(currentUnit);
 
         yield return new WaitForSeconds(1f);
 
@@ -56,13 +79,18 @@ public class BattleSystem : MonoBehaviour {
     public IEnumerator EndBattle() {
 
         if(state == BattleState.Won) {
-            dialogueText.text = "You won the battle!";
+            dialogueText.text = "Je hebt " + currentUnit.unitName + " verslagen!!";
             yield return new WaitForSeconds(2f);
+            SaveSystem.instance.SaveUnit(currentUnit,currentUnit.name);
+            currentUnit.spawnInAltWorld = false;
+            SaveSystem.instance.SaveUnit(playerUnit,playerUnit.name);
             LevelLoader.instance.LoadLevel("LevelOneScene");
         }
         else if(state == BattleState.Lost) {
-            dialogueText.text = "You lost.";
+            dialogueText.text = currentUnit.unitName + " heeft jou verslagen...";
             yield return new WaitForSeconds(2f);
+            SaveSystem.instance.SaveUnit(currentUnit,currentUnit.name);
+            SaveSystem.instance.SaveUnit(playerUnit,playerUnit.name);
             LevelLoader.instance.LoadLevel("GameOverScene");
         }
         
@@ -72,11 +100,11 @@ public class BattleSystem : MonoBehaviour {
 
         yield return new WaitForSeconds(1f);
 
-        dialogueText.text = enemyUnit.unitName + " attacks!";
+        dialogueText.text = currentUnit.unitName + " probeert je te intimideren!";
 
         yield return new WaitForSeconds(2f);
 
-        bool isDead = playerUnit.TakeDamage(enemyUnit.currentAttack);
+        bool isDead = playerUnit.TakeDamage(currentUnit.currentAttack);
         playerHUD.SetHealth(playerUnit.currentHealth);
 
         if(isDead) {
@@ -93,7 +121,7 @@ public class BattleSystem : MonoBehaviour {
 
         yield return new WaitForSeconds(1f);
 
-        dialogueText.text = "Choose an action:";
+        dialogueText.text = "Kies een actie:";
         state = BattleState.PlayerTurn;
 
     }
@@ -104,8 +132,8 @@ public class BattleSystem : MonoBehaviour {
         
         yield return new WaitForSeconds(2f);
 
-        bool isDead = enemyUnit.TakeDamage(playerUnit.currentAttack);
-        enemyHUD.SetHealth(enemyUnit.currentHealth);
+        bool isDead = currentUnit.TakeDamage(playerUnit.currentAttack);
+        enemyHUD.SetHealth(currentUnit.currentHealth);
 
         if(isDead) {
             state = BattleState.Won;
@@ -124,7 +152,7 @@ public class BattleSystem : MonoBehaviour {
 
         yield return new WaitForSeconds(2f);
 
-        enemyUnit.currentDefense = (int)((float)enemyUnit.currentDefense*0.9f);
+        currentUnit.currentDefense = (int)((float)currentUnit.currentDefense*0.9f);
 
         StartCoroutine(EnemyTurn());
         
@@ -156,14 +184,20 @@ public class BattleSystem : MonoBehaviour {
 
     public IEnumerator PlayerItems() {
 
-        dialogueText.text = "You eat a 'frikandelbroodje', which increases your health by 50!";
+        dialogueText.text = "Je eet een 'frikandelbroodje' en je wilskracht gaat omhoog met 50!";
 
         yield return new WaitForSeconds(2f);
 
-        playerUnit.Heal(50);
-        playerHUD.SetHealth(playerUnit.currentHealth);
-
-        StartCoroutine(EnemyTurn());
+        if(playerUnit.currentHealth <= playerUnit.maxHealth) {
+            playerUnit.Heal(50);
+            playerHUD.SetHealth(playerUnit.currentHealth);
+            StartCoroutine(EnemyTurn());
+        }
+        else {
+            dialogueText.text = "Je wilskracht is al vol!";
+            yield return new WaitForSeconds(1.5f);
+            StartCoroutine(PlayerTurn());
+        }
 
     }
 

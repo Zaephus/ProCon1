@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5c11855403434d4fa79a3404a9e3281, type: 3}
+  m_Name: Bob_3.3
+  m_EditorClassIdentifier: 
+  dialogueList:
+  - En je houdt je smoel dicht over mij in de toekomst.
+  responseOptions:
+  - "\u2026 [-5 frikandelbroodjes]"
+  - Maar de frikandel prijzen zijn de laatste tijd sterk gestegen en-
+  chosenAmount: 0000000000000000
+  inputBreak: 0
+  combatBreak: -1
+  endBreak: -1
+  permamentEndBreak: -1
+  spawnInAltWorld: 1
+  broodjesToGive: 0
+  nextDialogueOptions:
+  - {fileID: 11400000, guid: 4dce511aab4affd4b8ea4c6079eded73, type: 2}
+  - {fileID: 11400000, guid: d76506025ff5b584791112de8d20e147, type: 2}

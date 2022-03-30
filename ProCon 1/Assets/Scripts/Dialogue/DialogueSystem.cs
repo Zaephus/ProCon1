@@ -6,6 +6,12 @@ using TMPro;
 
 public class DialogueSystem : MonoBehaviour {
 
+    public GameObject playerPrefab;
+    private GameObject enemyPrefab;
+
+    public Transform playerPosition;
+    public Transform enemyPosition;
+
 	public TMP_Text dialogueText;
 	public List<DialogueButton> buttons = new List<DialogueButton>();
 	public List<int> inputBreak = new List<int>();
@@ -14,7 +20,9 @@ public class DialogueSystem : MonoBehaviour {
 	public GameObject optionsBox;
 	public GameObject dialogueButtonPrefab;
 	public GridLayoutGroup buttonGrid;
-	public EnemyUnit enemyUnit;
+	
+	private EnemyUnit currentUnit;
+	public List<EnemyUnit> units = new List<EnemyUnit>();
 
 	private DialogueOptions currentDialogueOption;
 
@@ -27,7 +35,54 @@ public class DialogueSystem : MonoBehaviour {
 
 	void Start() {
 
-		currentDialogueOption = enemyUnit.startDialogueOption;
+		Unit tempUnit = new Unit();
+		SaveSystem.instance.LoadUnit(tempUnit,"CurrentUnit");
+
+		foreach(EnemyUnit unit in units) {
+			if(unit.unitName == tempUnit.unitName) {
+				currentUnit = unit;
+			}
+		}
+
+        enemyPrefab = currentUnit.unitPrefab;
+
+        GameObject player = Instantiate(playerPrefab,playerPosition.position,Quaternion.identity,this.transform);
+
+        GameObject enemy = Instantiate(enemyPrefab,enemyPosition.position,Quaternion.identity,this.transform);
+
+		if(currentUnit.option == 0) {
+			currentDialogueOption = currentUnit.startDialogueOption;
+		}
+		else if(currentUnit.option == 1) {
+			currentDialogueOption = currentUnit.firstAlternateDialogueOption;
+		}
+		else if(currentUnit.option == 2) {
+			currentDialogueOption = currentUnit.secondAlternateDialogueOption;
+		}
+
+		if(currentUnit.inAltWorld) {
+
+			if(currentUnit.option == 3) {
+				currentDialogueOption = currentUnit.firstAltWorldDialogueOption;
+			}
+			else if(currentUnit.option == 4) {
+				currentDialogueOption = currentUnit.secondAltWorldDialogueOption;
+			}
+
+			if(currentUnit.battleDialogueOption != null) {
+				currentDialogueOption = currentUnit.battleDialogueOption;
+			}
+
+		}
+		else {
+			if(currentUnit.option == 3) {
+				currentDialogueOption = currentUnit.firstMainWorldDialogueOption;
+			}
+			else if(currentUnit.option == 4) {
+				currentDialogueOption = currentUnit.secondMainWorldDialogueOption;
+			}
+		}
+
 		AddNewDialogueOptions(currentDialogueOption);
 
 		foreach(DialogueButton b in buttons) {
@@ -138,14 +193,43 @@ public class DialogueSystem : MonoBehaviour {
 
 			if(index == currentDialogueOption.combatBreak) {
 				yield return new WaitForSeconds(0.5f);
-				LevelLoader.instance.LoadLevel("BattleScene");
+				LevelLoader.instance.StartBattle(currentUnit);
 				yield return null;
 			}
-			else {
+
+			if(currentDialogueOption.broodjesToGive != 0) {
 				yield return new WaitForSeconds(0.5f);
-				LevelLoader.instance.LoadLevel("LevelOneScene");
-				yield return null;
+				PlayerPrefs.SetInt("FrikandelBroodjes",(PlayerPrefs.GetInt("FrikandelBroodjes")+currentDialogueOption.broodjesToGive));
 			}
+
+			if(currentDialogueOption.permamentEndBreak == 1) {
+				yield return new WaitForSeconds(0.5f);
+				currentUnit.option = 1;
+			}
+
+			if(currentDialogueOption.permamentEndBreak == 2) {
+				yield return new WaitForSeconds(0.5f);
+				currentUnit.option = 2;
+			}
+
+			if(currentDialogueOption.permamentEndBreak == 3) {
+				yield return new WaitForSeconds(0.5f);
+				currentUnit.option = 3;
+			}
+
+			if(currentDialogueOption.permamentEndBreak == 4) {
+				yield return new WaitForSeconds(0.5f);
+				currentUnit.option = 4;
+			}
+
+			if(currentDialogueOption.spawnInAltWorld) {
+				yield return new WaitForSeconds(0.5f);
+				currentUnit.inAltWorld = true;
+			}
+
+			yield return new WaitForSeconds(0.5f);
+			LevelLoader.instance.LoadLevel("LevelOneScene");
+			yield return null;
 		
 		}
 
