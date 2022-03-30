@@ -91,7 +91,7 @@ public class BattleSystem : MonoBehaviour {
             yield return new WaitForSeconds(2f);
             SaveSystem.instance.SaveUnit(currentUnit,currentUnit.name);
             SaveSystem.instance.SaveUnit(playerUnit,playerUnit.name);
-            LevelLoader.instance.LoadLevel("GameOverScene");
+            LevelLoader.instance.LoadLevel("StartScreenScene");
         }
         
     }
