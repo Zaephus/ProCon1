@@ -53,6 +53,7 @@ public class LevelLoader : MonoBehaviour {
 
             unit.lastPosX = unit.startPosX;
             unit.lastPosY = unit.startPosY;
+            unit.option = 0;
             SaveSystem.instance.SaveUnit(unit,unit.name);
 
             if(unit.unitName == "Intimi-NATOR") {

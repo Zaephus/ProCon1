@@ -20,5 +20,8 @@ MonoBehaviour:
   chosenAmount: 
   inputBreak: 0
   combatBreak: -1
-  endBreak: -1
+  endBreak: 0
+  permamentEndBreak: -1
+  spawnInAltWorld: 0
+  broodjesToGive: 0
   nextDialogueOptions: []

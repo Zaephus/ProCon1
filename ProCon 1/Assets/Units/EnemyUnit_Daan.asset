@@ -25,7 +25,7 @@ MonoBehaviour:
   lastPosY: -2
   canSpawn: 1
   startDialogueOption: {fileID: 11400000, guid: 89db370a238f32d4a8d26bcbd63818b5, type: 2}
-  option: 2
+  option: 0
   firstAlternateDialogueOption: {fileID: 11400000, guid: 074ec09393d377e41bf9aec531aeef4c, type: 2}
   secondAlternateDialogueOption: {fileID: 11400000, guid: 792887789632302418b8759b1eaf7e30, type: 2}
   firstAltWorldDialogueOption: {fileID: 11400000, guid: b777ef4bab365144da8466e5e5cb64f2, type: 2}
