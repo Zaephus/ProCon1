@@ -1,7 +1,7 @@
 {
     "unitName": "Intimi-NATOR",
     "maxHealth": 100,
-    "currentHealth": 0,
+    "currentHealth": 80,
     "baseAttack": 40,
     "currentAttack": 40,
     "baseDefense": 0,
